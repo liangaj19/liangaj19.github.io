@@ -3,9 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 <body>
-    
+    <nav>
+        <div class="container">
+            <img src="images/logo.png" class="logo" alt="Logo">
+            <img src="images/mobile-logo.png" class="mobile-logo" alt="Logo">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="header">
+        <div class="container">
+            <div class="header-text">
+                <p>Undergraduate Student at<br>the University of Michigan - Ann Arbor</p>
+                <h1>Hi, I'm <span>Amy Liang</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/headshot.jpeg" alt="Headshot of Amy Liang">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="subtitle">About Me</h1>
+                    <p>I'm currently a junior at the University of Michigan in Ann Arbor studying Computer Science with a minor in User Design Experience.<br>
+                    <br>
+                    I grew up in Dalian, China, and am currently based in Chicago, IL. My love for computers and video games started when I was a kid, thanks to my uncle, who was also a Computer Science major and a big gamer. Growing up surrounded by his passion for technology, I quickly developed my own fascination with how computers work and how design shapes our experience with technology.<br>
+                    <br>
+                    Outside of technology related work, I love listening to music. A night stroll with headphones on is the perfect way to clear my mind, or to think about code. I also did Chinese dance for 14 years since the first time it caught my eyes on TV when I was four years old!
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills', this)">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience', this)">Experience</p>
+                        <p class="tab-links" onclick="opentab('education', this)">Education</p>
+                    </div>
+
+                    <div class="about-list active-tab" id="skills">
+                        <ul>
+                            <li><span>Coding Languages</span><br>C/C++<br>Swift<br>Python<br>MATLAB<br>HTML/CSS/JS</li>
+                            <li><span>UI/UX</span><br>Designing web interfaces</li>
+                            <li><span>App Development</span><br>Building iOS apps through SwiftUI</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-list" id="experience">
+                        <ul>
+                            <li><span>January 2024 - Present</span><br>General Physics II Learning Assistant at the University of Michigan</li>
+                            <li><span>June 2024 - August 2024</span><br>Machine Learning Teaching Assistant at Everyone Can Code Chicago Partnered with Apple</li>
+                            <li><span>June 2023 - August 2023</span><br>AI and Creativity TA at Everyone Can Code Chicago Partnered with Apple</li>
+                            <li><span>September 2022 - December 2022</span><br>Software Developer in the App Accelerator Program at Everyone Can Code Chicago Partnered with Apple</li>
+                            <li><span>July 2022 - August 2022</span><br>Student Developer at Everyone Can Code Chicago Partnered with Apple</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-list" id="education">
+                        <ul>
+                            <li><span>Relevant Courses</span><br>Data Structures and Algorithms<br>Foundations of Computer Science/Discrete Math<br>Intro to Computer Organization<br>Web Design, Development, and Accessibility</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------- contact ---------->
+    <div id="contact">
+        <div class="container">
+            <h1>Contact Me</h1>
+            <p>Please contact me directly at <a href="mailto:liangaj@umich.edu">liangaj@umich.edu</a> or <a href="tel:3129121641">+1 (312)-912-1641</a>, or through this form.</p>
+
+            <div class="contact-form">
+                <form>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://github.com/liangaj19" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/amy-jiayu-liang" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
