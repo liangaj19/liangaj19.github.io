@@ -18,3 +18,13 @@ function opentab(tabname, element) {
     // Add active-tab class to the corresponding tab content
     document.getElementById(tabname).classList.add("active-tab");
 }
+
+var sidemenu = document.getElementById("sidemenu");
+
+function closemenu() {
+    sidemenu.style.right = "-200px";
+}
+
+function openmenu() {
+    sidemenu.style.right = "0";
+}

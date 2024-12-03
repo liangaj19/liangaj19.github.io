@@ -24,6 +24,8 @@ body {
 #header {
     width: 100%;
     height: 25vh;
+    background-size: cover;
+    background-position: center;
 }
 
 /* Navbar Styling */
@@ -34,13 +36,16 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: -webkit-sticky; /* For Safari support */
     position: sticky;
     top: 0;
     background: var(--bg-color);
     z-index: 1000;
-    padding: 10px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+nav .fa-solid {
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
 }
 nav .container {
     display: flex;
@@ -50,14 +55,26 @@ nav .container {
     width: 100%;
 }
 nav ul {
-    display: flex;
-    align-items: center;
+    background: var(--box-color);
     list-style: none;
-    margin: 0;
-    padding: 0;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition-duration: 0.5s;
 }
 nav ul li {
-    margin: 10px;
+    display: block;
+    margin: 25px;
+}
+nav ul .fa-solid {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
 }
 nav ul li a {
     color: var(--text-color);
@@ -79,12 +96,10 @@ nav ul li a:hover::after {
     width: 100%;
 }
 nav .logo {
-    display: none;
-}
-nav .mobile-logo {
-    width: 60px;
+    display: block;
+    width: 170px;
     height: auto;
-    padding-top: 4px;
+    padding-top: 8px;
 }
 
 /* Intro Styling */
@@ -101,7 +116,7 @@ nav .mobile-logo {
     font-size: 18px;
 }
 .header-text h1 {
-    font-size: 36px;
+    font-size: 30px;
     margin-top: 10px;
 }
 .header-text h1 span {
@@ -242,11 +257,10 @@ nav .mobile-logo {
 @media (min-width: 961px) {
     #header {
         height: 100vh;
+        background-image: url(../images/background.png);
         background-size: cover;
         background-position: center;
-        background-image: url(../images/background.png);
     }
-
     .header-text {
         margin-top: 20%;
     }
@@ -255,21 +269,37 @@ nav .mobile-logo {
     }
     .header-text h1 {
         font-size: 60px;
+        padding-top: 20px;
     }
+
     nav {
         padding-top: 10px;
         padding-bottom: 10px;
     }
+    nav .fa-solid {
+        display: none;
+    }
+    nav .logo {
+        width: 225px;
+    }
+    nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Align items to the right */
+        margin: 0;
+        padding: 0;
+        background: none;
+        position: static;
+        width: auto;
+        height: auto;
+        transition: none; /* Disable transition for larger screens */
+    }
     nav ul li {
-        margin: 10px 20px;
+        margin: 0 20px;
+        display: flex;
     }
     nav ul li a {
         font-size: 18px;
-    }
-    nav .logo {
-        display: block;
-        width: 225px;
-        height: auto;
     }
     nav .mobile-logo {
         display: none;
@@ -310,7 +340,7 @@ nav .mobile-logo {
     }
 
     #contact {
-        padding: 100px 0;
+        padding: 50px 0;
     }
     #contact h1 {
         font-size: 48px;
