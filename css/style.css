@@ -3,7 +3,7 @@
     --bg-color: #1e2026;
     --secondary-bg-color: #2B3040;
     --text-color: white;
-    --box-color: #5A24A6;
+    --box-color: #664692;
     --underline-color: #a498f0;
     --highlight-color: #d2cedb;
 }
@@ -188,6 +188,81 @@ nav .logo {
 }
 .about-list.active-tab {
     display: block;
+}
+/* ---------------- Projects Styling ---------------- */
+#projects {
+    padding: 20px 80px;
+    padding-bottom: 80px;
+    text-align: center;
+}
+#projects h1 {
+    font-size: clamp(30px, 4vw, 45px);
+    margin-bottom: 40px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+}
+.card {
+    background-color: var(--box-color);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card .container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+.card .details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+.card .details h2 {
+    font-weight: 600;
+    margin: 10px 0 15px 0;
+}
+.card .details p {
+    color: var(--highlight-color);
+    font-size: 16px;
+    line-height: 1.5;
+    padding-bottom: 20px;
+    flex: 1;
+}
+.card a {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    color: var(--highlight-color);
+    border: solid 2px var(--highlight-color);
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.card a .fa-brands {
+    padding-right: 6px;
+}
+.card a:hover {
+    background-color: var(--highlight-color);
+    color: var(--bg-color);
 }
 
 /* ---------------- Contact Styling ---------------- */
