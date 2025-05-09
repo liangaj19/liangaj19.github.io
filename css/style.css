@@ -1,9 +1,13 @@
 /* Default dark mode colors */
 :root {
     --bg-color: #0f0a18;
-    --text-color: white;
+    --title-color: rgb(246, 240, 248);
+    --text-color: rgb(197, 197, 209);
     --frame-color: rgb(127, 121, 128);
 }
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
 
 * {
     margin: 0;
@@ -12,6 +16,7 @@
 
 body {
     background-color: var(--bg-color);
+    overflow: hidden;
 }
 
 .frame {
@@ -22,7 +27,6 @@ body {
     bottom: 2vw;
     border: 1px solid var(--frame-color);
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .overlay {
@@ -67,11 +71,10 @@ body {
     height: 500px;
     pointer-events: none;
     z-index: 2;
-    filter: blur(180px);
+    filter: blur(200px);
     will-change: transform;
     mix-blend-mode: lighten;
 
-    /* Smooth multi-color neon gradient */
     background: radial-gradient(circle at 40% 40%, 
         #5aaac2 15%,
         #7209b7 45%,
@@ -82,7 +85,6 @@ body {
     border-radius: 50% 40% 60% 50% / 45% 55% 40% 60%;
 }
 
-/* Enhancing depth with layered glows */
 .cursor-glow::before, .cursor-glow::after {
     content: "";
     position: absolute;
@@ -96,32 +98,80 @@ body {
 
 .cursor-glow::before {
     background: radial-gradient(circle at 80% 20%, 
-        rgba(0, 255, 230, 0.5) 20%,   /* Neon Aqua */
-        rgba(255, 30, 150, 0.4) 80%   /* Hot Pink */
+        rgba(0, 255, 230, 0.5) 20%,
+        rgba(255, 30, 150, 0.4) 80%
     );
     animation: glowPulse 6s infinite ease-in-out;
 }
 
 .cursor-glow::after {
     background: radial-gradient(circle at 30% 70%, 
-        rgba(0, 250, 200, 0.4) 25%,   /* Soft Teal */
-        rgba(255, 80, 210, 0.4) 80%   /* Bright Magenta */
+        rgba(0, 250, 200, 0.4) 25%,
+        rgba(255, 80, 210, 0.4) 80%
     );
     animation: glowPulse 7s infinite ease-in-out reverse;
 }
 
-/* Subtle breathing effect */
 @keyframes glowPulse {
     0% { transform: scale(1); opacity: 0.7; }
     50% { transform: scale(1.05); opacity: 0.85; }
     100% { transform: scale(1); opacity: 0.7; }
 }
 
-.h1 {
+.content-wrapper {
+    color: var(--title-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 4;
+}
+
+header {
+    width: 45%;
+    padding: 80px 120px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+#description {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+main {
+    width: 60%;
+    padding: 80px 120px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    font-family: "Cal Sans", sans-serif;
+    font-style: normal;
+}
+
+main p {
     color: var(--text-color);
 }
 
 /* Media query for mobile devices */
 @media (max-width: 600px) {
-    
+    .content-wrapper {
+        display: block;
+    }
 }
