@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
+    <title>Amy Liang</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,166 +11,53 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <img src="images/logo.png" class="logo" alt="Logo">
-            <ul id="sidemenu">
-                <li tabindex="0"><a href="#header">Home</a></li>
-                <li tabindex="0"><a href="#about">About</a></li>
-                <li tabindex="0"><a href="#projects">Projects</a></li>
-                <li tabindex="0"><a href="#">Hobbies</a></li>
-                <li tabindex="0"><a href="#contact">Contact</a></li>
-                <li><i class="fa-solid fa-xmark" onclick="closemenu()"></i></li>
-            </ul>
-            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </div>
-    </nav>
-    <main>
-    <div id="header">
-        <div class="container">
-            <div class="header-text">
-                <p>Undergraduate Student at<br>the University of Michigan - Ann Arbor</p>
-                <h1>Hi, I'm <span>Amy Liang</span></h1>
+    <div class="frame">
+        <div class="cursor-glow"></div>
+        <header>
+            <div class="info">
+                <span class="h1">Amy Liang</span>
+                <span class="h3">Undergraduate Computer Science Student</span>
+                <p>I am passionate about web, software, and iOS application development.</p>
             </div>
-        </div>
+            <nav class="main-navigation">
+                <ul class="middle-bar">
+                    <li class="h6">About</li>
+                    <li class="h6">Projects</li>
+                    <li class="h6">Experience</li>
+                    <li class="h6">Contact</li>
+                    <li class="h6-button">Resume</li>
+                    <li class="h6-button">Transcript</li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="right-panel">
+                <div class="about">
+
+                </div>
+
+                <div class="projects">
+
+                </div>
+
+                <div class="experience">
+
+                </div>
+            </div>
+        </main>
     </div>
 
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/headshot.jpeg" alt="Headshot of Amy Liang">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="subtitle">About Me</h1>
-                    <p>I'm currently a junior at the University of Michigan in Ann Arbor studying Computer Science with a minor in User Design Experience.<br>
-                    <br>
-                    I grew up in Dalian, China, and am currently based in Chicago, IL. My love for computers and video games started when I was a kid, thanks to my uncle, who was also a Computer Science major and a big gamer. Growing up surrounded by his passion for technology, I quickly developed my own fascination with how computers work and how design shapes our experience with technology.<br>
-                    <br>
-                    Outside of technology related work, I love listening to music. A night stroll with headphones on is the perfect way to clear my mind, or to think about code. I also did Chinese dance for 14 years since the first time it caught my eyes on TV when I was four years old!
-                    </p>
+    <div class="overlay">
+        <div class="overlay top"></div>
+        <div class="overlay bottom"></div>
+        <div class="overlay right"></div>
+        <div class="overlay left"></div>
+    </div>
+    <div class="socials">
 
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills', this)">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience', this)">Experience</p>
-                        <p class="tab-links" onclick="opentab('education', this)">Education</p>
-                    </div>
-
-                    <div class="about-list active-tab" id="skills">
-                        <ul>
-                            <li><span>Coding Languages</span><br>C/C++<br>Swift<br>Python<br>MATLAB<br>HTML/CSS/JS</li>
-                            <li><span>UI/UX</span><br>Designing web interfaces</li>
-                            <li><span>App Development</span><br>Building iOS apps through SwiftUI</li>
-                        </ul>
-                    </div>
-
-                    <div class="about-list" id="experience">
-                        <ul>
-                            <li><span>January 2024 - Present</span><br>General Physics II Learning Assistant at the University of Michigan</li>
-                            <li><span>June 2024 - August 2024</span><br>Machine Learning Teaching Assistant at Everyone Can Code Chicago Partnered with Apple</li>
-                            <li><span>June 2023 - August 2023</span><br>AI and Creativity TA at Everyone Can Code Chicago Partnered with Apple</li>
-                            <li><span>September 2022 - December 2022</span><br>Software Developer in the App Accelerator Program at Everyone Can Code Chicago Partnered with Apple</li>
-                            <li><span>July 2022 - August 2022</span><br>Student Developer at Everyone Can Code Chicago Partnered with Apple</li>
-                        </ul>
-                    </div>
-
-                    <div class="about-list" id="education">
-                        <ul>
-                            <li><span>Relevant Courses</span><br>Data Structures and Algorithms<br>Foundations of Computer Science/Discrete Math<br>Intro to Computer Organization<br>Web Design, Development, and Accessibility</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
-    <div id="projects">
-        <h1>My Projects</h1>
-        <div class="cards">
-            <div class="card card1">
-                <div class="container">
-                    <img src="images/370_p4.png" alt="cache simulator project">
-                </div>
-                <div class="details">
-                    <h2>CPU Cache Simulator</h2>
-                    <p>C implementation of a CPU cache using write-back and allocate-on-write.</p>
-                    <a href="https://gitfront.io/r/liangaj/Wwyi6Zetd1Ur/p1-letterman/" target="_blank"><i class="fa-brands fa-github"></i>Github Repository</a>
-                </div>
-            </div>
-            <div class="card card2">
-                <div class="container">
-                    <img src="images/370_p3.png" alt="pipeline simulator project">
-                </div>
-                <div class="details">
-                    <h2>Pipeline Simulator</h2>
-                    <p>C implementation of a 5-stage pipeline simulator of the UMICH-created architecture LC-2K.</p>
-                    <a href="https://gitfront.io/r/liangaj/Wwyi6Zetd1Ur/p1-letterman/" target="_blank"><i class="fa-brands fa-github"></i>Github Repository</a>
-                </div>
-            </div>
-            <div class="card card3">
-                <div class="container">
-                    <img src="images/281_p2.png" alt="priority-based search project">
-                </div>
-                <div class="details">
-                    <h2>Mine Escape</h2>
-                    <p>Priority-based search and priority queues.</p>
-                    <a href="https://gitfront.io/r/liangaj/Wwyi6Zetd1Ur/p1-letterman/" target="_blank"><i class="fa-brands fa-github"></i>Github Repository</a>
-                </div>
-            </div>
-            <div class="card card4">
-                <div class="container">
-                    <img src="images/281_p4.png" alt="MST and TSP project">
-                </div>
-                <div class="details">
-                    <h2>Drone Delivery</h2>
-                    <p>MST and TSP, branch and search.</p>
-                    <a href="https://gitfront.io/r/liangaj/x6p65KsWqwVV/p4-drones/" target="_blank"><i class="fa-brands fa-github"></i>Github Repository</a>
-                </div>
-            </div>
-            <div class="card card5">
-                <div class="container">
-                    <img src="images/281_p3.jpeg" alt="SQL project">
-                </div>
-                <div class="details">
-                    <h2>SillyQL</h2>
-                    <p>Relational database model and SQL.</p>
-                    <a href="https://gitfront.io/r/liangaj/GWsEKEGJJXHg/p3-sillyql/" target="_blank"><i class="fa-brands fa-github"></i>Github Repository</a>
-                </div>
-            </div>
-            <div class="card card6">
-                <div class="container">
-                    <img src="images/281_p1.png" alt="path finding project">
-                </div>
-                <div class="details">
-                    <h2>Letterman Reboot</h2>
-                    <p>Path finding using BFS with queues and DFS with deques.</p>
-                    <a href="https://gitfront.io/r/liangaj/Wwyi6Zetd1Ur/p1-letterman/" target="_blank"><i class="fa-brands fa-github"></i>Github Repository</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--------- contact ---------->
-    <div id="contact">
-        <div class="container">
-            <h1>Contact Me</h1>
-            <p>Please contact me directly at <a href="mailto:liangaj@umich.edu">liangaj@umich.edu</a> or <a href="tel:3129121641">+1 (312)-912-1641</a>, or through this form.</p>
-
-            <div class="contact-form">
-                <form>
-                    <input type="email" name="email" placeholder="Your Email" aria-label="input email here" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message" aria-label="input your message here" ></textarea>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-
-            <div class="social-icons">
-                <a href="https://github.com/liangaj19" target="_blank" aria-label="GitHub profile"><i class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com/in/amy-jiayu-liang" target="_blank" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-        </div>
-    </div>
-    </main>
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,30 +1,23 @@
-var tabLinks = document.getElementsByClassName("tab-links");
-var tabContents = document.getElementsByClassName("about-list");
+window.onload = function () {
+    const glow = document.querySelector(".cursor-glow");
 
-function opentab(tabname, element) {
-    // Remove active-link class from all tab links
-    for (var tabLink of tabLinks) {
-        tabLink.classList.remove("active-link");
+    let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+    let glowX = mouseX, glowY = mouseY;
+
+    document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function followCursor() {
+        glowX += (mouseX - glowX) * 0.6;  // Slower delay for smoother effect
+        glowY += (mouseY - glowY) * 0.6;
+
+        glow.style.left = `${glowX - 250}px`;
+        glow.style.top = `${glowY - 250}px`;
+
+        requestAnimationFrame(followCursor);
     }
-    
-    // Remove active-tab class from all tab contents
-    for (var tabContent of tabContents) {
-        tabContent.classList.remove("active-tab");
-    }
-    
-    // Add active-link class to the clicked tab
-    element.classList.add("active-link");
-    
-    // Add active-tab class to the corresponding tab content
-    document.getElementById(tabname).classList.add("active-tab");
-}
 
-var sidemenu = document.getElementById("sidemenu");
-
-function closemenu() {
-    sidemenu.style.right = "-200px";
-}
-
-function openmenu() {
-    sidemenu.style.right = "0";
-}
+    followCursor();
+};
