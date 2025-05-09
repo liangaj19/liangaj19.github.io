@@ -10,8 +10,8 @@ window.onload = function () {
     });
 
     function followCursor() {
-        glowX += (mouseX - glowX) * 0.6;  // Slower delay for smoother effect
-        glowY += (mouseY - glowY) * 0.6;
+        glowX += (mouseX - glowX) * 0.2;  // Slower delay for smoother effect
+        glowY += (mouseY - glowY) * 0.2;
 
         glow.style.left = `${glowX - 250}px`;
         glow.style.top = `${glowY - 250}px`;
