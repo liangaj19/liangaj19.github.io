@@ -2,13 +2,11 @@
 :root {
     --bg-color: #0f0a18;
     --title-color: rgb(246, 240, 248);
-    --text-color: rgb(197, 197, 209);
+    --text-color: rgb(185, 185, 204);
     --frame-color: rgb(127, 121, 128);
 }
 
-/* Font imports */
-@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
-
+/* Default styling for mobile view */
 * {
     margin: 0;
     padding: 0;
@@ -16,23 +14,25 @@
 
 body {
     background-color: var(--bg-color);
-    overflow: hidden;
+    color: var(--text-color);
+    overflow: auto;
 }
 
 .frame {
     position: fixed;
-    top: 2vw;
-    left: 2vw;
-    right: 2vw;
-    bottom: 2vw;
+    top: 4vw;
+    left: 4vw;
+    right: 4vw;
+    bottom: 4vw;
     border: 1px solid var(--frame-color);
     box-sizing: border-box;
 }
 
+/* Area outside of frame */
 .overlay {
     position: fixed;
-    background-color: var(--bg-color); /* Match this to the body */
-    z-index: 3; /* Higher than the cursor glow */
+    background-color: var(--bg-color);
+    z-index: 3; /* Higher than the cursor glow to cover it */
 }
 
 .overlay.top {
@@ -63,115 +63,156 @@ body {
     height: 100%;
 }
 
-.cursor-glow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 500px;
-    height: 500px;
-    pointer-events: none;
-    z-index: 2;
-    filter: blur(200px);
-    will-change: transform;
-    mix-blend-mode: lighten;
-
-    background: radial-gradient(circle at 40% 40%, 
-        #5aaac2 15%,
-        #7209b7 45%,
-        #ff65aa 60%,
-        #3a0ca3 85%,
-        #4361ee 100%
-    );
-    border-radius: 50% 40% 60% 50% / 45% 55% 40% 60%;
-}
-
-.cursor-glow::before, .cursor-glow::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    filter: blur(140px);
-    opacity: 0.80;
-    mix-blend-mode: overlay;
-}
-
-.cursor-glow::before {
-    background: radial-gradient(circle at 80% 20%, 
-        rgba(0, 255, 230, 0.5) 20%,
-        rgba(255, 30, 150, 0.4) 80%
-    );
-    animation: glowPulse 6s infinite ease-in-out;
-}
-
-.cursor-glow::after {
-    background: radial-gradient(circle at 30% 70%, 
-        rgba(0, 250, 200, 0.4) 25%,
-        rgba(255, 80, 210, 0.4) 80%
-    );
-    animation: glowPulse 7s infinite ease-in-out reverse;
-}
-
-@keyframes glowPulse {
-    0% { transform: scale(1); opacity: 0.7; }
-    50% { transform: scale(1.05); opacity: 0.85; }
-    100% { transform: scale(1); opacity: 0.7; }
-}
-
+/* Styling for content inside of frame */
 .content-wrapper {
-    color: var(--title-color);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    z-index: 4;
-}
-
-header {
-    width: 45%;
-    padding: 80px 120px;
-    overflow-y: auto;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-    font-family: "Cal Sans", sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
+    display: block;
+    box-sizing: border-box;
 }
 
 h1 {
     font-weight: 800;
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    color: var(--title-color);
 }
 
 h2 {
-    font-weight: 600;
-    font-size: 1.7rem;
-    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: .7rem;
+    color: var(--title-color);
 }
 
 #description {
-    font-weight: 500;
-    font-size: 1rem;
+    margin-top: 1.2rem;
+    line-height: 1.3rem;
 }
 
-main {
-    width: 60%;
-    padding: 80px 120px;
-    overflow-y: auto;
-    box-sizing: border-box;
-    font-family: "Cal Sans", sans-serif;
-    font-style: normal;
+/* Borgor stack navbar for mobile view */
+.main-navigation {
+    color: var(--title-color)
 }
 
-main p {
-    color: var(--text-color);
+i {
+    font-size: 20px; /* Make icons slightly larger */
 }
 
-/* Media query for mobile devices */
-@media (max-width: 600px) {
-    .content-wrapper {
+.nav-bar {
+    display: none;
+    list-style: none;
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+}
+
+#borgor {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.nav-item .fa-solid, .nav-item span {
+    margin-right: 15px;
+}
+
+.nav-item i {
+    width: 30px;
+}
+
+.nav-item:nth-child(4) {
+    margin-bottom: 0; /* Remove bottom margin on the last item */
+}
+
+/* Hide resume and transcript download */
+.nav-button {
+    display: none;
+}
+
+/* Styling for large viewports */
+@media (min-width: 1024px) {
+    /* Frame size */
+    .frame {
+        top: 2vw;
+        left: 2vw;
+        right: 2vw;
+        bottom: 2vw;
+    }
+
+    /* Normal nav bar */
+    #borgor {
+        display: none;
+    }
+
+    .nav-bar {
         display: block;
+    }
+
+    /* Cursor glow effect */
+    .cursor-glow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 500px;
+        height: 500px;
+        pointer-events: none;
+        z-index: 2;
+        filter: blur(200px);
+        will-change: transform;
+        mix-blend-mode: lighten;
+
+        background: radial-gradient(circle at 40% 40%, 
+            #5aaac2 15%,
+            #7209b7 45%,
+            #ff65aa 60%,
+            #3a0ca3 85%,
+            #4361ee 100%
+        );
+        border-radius: 50% 40% 60% 50% / 45% 55% 40% 60%;
+    }
+
+    .cursor-glow::before, .cursor-glow::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: inherit;
+        filter: blur(140px);
+        opacity: 0.80;
+        mix-blend-mode: overlay;
+    }
+
+    .cursor-glow::before {
+        background: radial-gradient(circle at 80% 20%, 
+            rgba(0, 255, 230, 0.5) 20%,
+            rgba(255, 30, 150, 0.4) 80%
+        );
+        animation: glowPulse 6s infinite ease-in-out;
+    }
+
+    .cursor-glow::after {
+        background: radial-gradient(circle at 30% 70%, 
+            rgba(0, 250, 200, 0.4) 25%,
+            rgba(255, 80, 210, 0.4) 80%
+        );
+        animation: glowPulse 7s infinite ease-in-out reverse;
+    }
+
+    @keyframes glowPulse {
+        0% { transform: scale(1); opacity: 0.7; }
+        50% { transform: scale(1.05); opacity: 0.85; }
+        100% { transform: scale(1); opacity: 0.7; }
     }
 }

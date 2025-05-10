@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 <body>
@@ -15,33 +16,51 @@
             <header>
                 <div class="info">
                     <h1>Amy Liang</h1>
-                    <h2>Undergraduate Computer Science Student</h2>
-                    <p id="description">I am passionate about web, software, and iOS application development.</p>
+                    <h2>Computer Science Undergraduate</h2>
+                    <p id="description">I am passionate about web, software, <br>and iOS development (and video games).</p>
                 </div>
                 <nav class="main-navigation">
-                    <ul class="middle-bar">
-                        <li class="nav-item">About</li>
-                        <li class="nav-item">Projects</li>
-                        <li class="nav-item">Experience</li>
-                        <li class="nav-item">Contact</li>
-                        <li class="nav-button">Resume</li>
-                        <li class="nav-button">Transcript</li>
+                    <i class="fa-solid fa-bars" id="borgor"></i>
+                    <ul class="nav-bar">
+                        <li class="nav-item">
+                            <i class="fa-solid fa-house"></i>
+                            <a href="#about"><span>About</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Projects</span>
+                        </li>
+                        <li class="nav-item">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span>Experience</span>
+                        </li>
+                        <li class="nav-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Contact</span>
+                        </li>
+                        <li class="nav-item nav-button">Resume</li>
+                        <li class="nav-item nav-button">Transcript</li>
                     </ul>
                 </nav>
             </header>
 
             <main>
                 <div class="right-panel">
-                    <div class="about">
-                        <p>Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha.Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha. Hehe haha.</p>
+                    <div id="about">
+                        <h2 class="mobile-subheading">About</h2>
+                        <p>I'm a rising senior studying Computer Science at the University of Michigan with a minor in User Experience Design.</p>
                     </div>
 
                     <div class="projects">
-
+                        <h2 class="mobile-subheading">Projects</h2>
                     </div>
 
                     <div class="experience">
+                        <h2 class="mobile-subheading">Experience</h2>
+                    </div>
 
+                    <div class="contact">
+                        <h2 class="mobile-subheading">Contact</h2>
                     </div>
                 </div>
             </main>

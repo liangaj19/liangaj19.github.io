@@ -1,3 +1,4 @@
+/* Cursor glow effect */
 window.onload = function () {
     const glow = document.querySelector(".cursor-glow");
 
@@ -21,3 +22,13 @@ window.onload = function () {
 
     followCursor();
 };
+
+/* Mobile borgor stack */
+document.addEventListener('DOMContentLoaded', function() {
+    const borgor = document.getElementById('borgor');
+    const navBar = document.querySelector('.nav-bar');
+
+    borgor.addEventListener('click', function() {
+        navBar.style.display = navBar.style.display === 'block' ? 'none' : 'block';
+    });
+});
