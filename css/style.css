@@ -18,49 +18,15 @@ body {
     overflow: auto;
 }
 
+/* Frame and overlay */
 .frame {
-    position: fixed;
-    top: 4vw;
-    left: 4vw;
-    right: 4vw;
-    bottom: 4vw;
+    left: 15px;
+    right: 15px;
+    top: 15px;
+    bottom: 15px;
+    position: absolute;
     border: 1px solid var(--frame-color);
     box-sizing: border-box;
-}
-
-/* Area outside of frame */
-.overlay {
-    position: fixed;
-    background-color: var(--bg-color);
-    z-index: 3; /* Higher than the cursor glow to cover it */
-}
-
-.overlay.top {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2vw;
-}
-
-.overlay.bottom {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2vw;
-}
-
-.overlay.left {
-    top: 0;
-    left: 0;
-    width: 2vw;
-    height: 100%;
-}
-
-.overlay.right {
-    top: 0;
-    right: 0;
-    width: 2vw;
-    height: 100%;
 }
 
 /* Styling for content inside of frame */
@@ -102,20 +68,53 @@ h2 {
 
 i {
     font-size: 20px; /* Make icons slightly larger */
+    z-index: 6;
+    color: var(--bg-color);
 }
 
 .nav-bar {
-    display: none;
     list-style: none;
-    position: absolute;
-    bottom: 70px;
-    left: 20px;
+    position: fixed;
+    bottom: 0px;
+    left: -250px; /* Init off screen for animation */
+    transition: left 0.5s ease;
+    height: 100%;
+    background-color: var(--text-color);
+    width: 50%;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 4;
+}
+
+.nav-bar.active {
+    left: 0px;
 }
 
 #borgor {
     position: absolute;
-    bottom: 20px;
+    bottom: 12px;
     left: 20px;
+}
+
+/* Init X to be invisible */
+#close-menu {
+    position: absolute;
+    bottom: 11px;
+    left: 20px;
+    visibility: hidden;
+    font-size: 25px;
+    padding-left: 1px;
+}
+
+/* Bar for mobile nav */
+#mobile-nav {
+    position: fixed;
+    bottom: 0px;
+    left:0px;
+    right:0px;
+    height: 8vh;
+    width: 100%;
+    background-color: var(--text-color);
+    z-index: 3;
 }
 
 .nav-item {
@@ -132,6 +131,10 @@ i {
     width: 30px;
 }
 
+.nav-item span {
+    color: var(--bg-color);
+}
+
 .nav-item:nth-child(4) {
     margin-bottom: 0; /* Remove bottom margin on the last item */
 }
@@ -143,12 +146,40 @@ i {
 
 /* Styling for large viewports */
 @media (min-width: 1024px) {
-    /* Frame size */
-    .frame {
-        top: 2vw;
-        left: 2vw;
-        right: 2vw;
-        bottom: 2vw;
+    /* Overlay to cover glow effect */
+    /* Area outside of frame */
+    .overlay {
+        position: fixed;
+        background-color: var(--bg-color);
+        z-index: 3; /* Higher than the cursor glow to cover it */
+    }
+
+    .overlay.top {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 15px;
+    }
+
+    .overlay.bottom {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 15px;
+    }
+
+    .overlay.left {
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 100%;
+    }
+
+    .overlay.right {
+        top: 0;
+        right: 0;
+        width: 15px;
+        height: 100%;
     }
 
     /* Normal nav bar */

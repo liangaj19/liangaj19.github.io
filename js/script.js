@@ -27,8 +27,19 @@ window.onload = function () {
 document.addEventListener('DOMContentLoaded', function() {
     const borgor = document.getElementById('borgor');
     const navBar = document.querySelector('.nav-bar');
+    const close = document.getElementById('close-menu');
 
     borgor.addEventListener('click', function() {
-        navBar.style.display = navBar.style.display === 'block' ? 'none' : 'block';
+        // navBar.style.display = 'block';
+        borgor.style.visibility = 'hidden';
+        close.style.visibility = 'visible';
+        navBar.classList.toggle('active');
+    });
+
+    close.addEventListener('click', function() {
+        // navBar.style.display = 'none';
+        borgor.style.visibility = 'visible';
+        close.style.visibility = 'hidden';
+        navBar.classList.toggle('active');
     });
 });
