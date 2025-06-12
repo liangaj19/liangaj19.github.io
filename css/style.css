@@ -31,12 +31,7 @@ body {
 
 /* Styling for content inside of frame */
 .content-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin: 2rem 1.2rem;
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     display: block;
@@ -56,6 +51,17 @@ h2 {
     color: var(--title-color);
 }
 
+h3 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-top: .7rem;
+    font-style: italic;
+}
+
+.info {
+    margin-bottom: 50px;
+}
+
 #description {
     margin-top: 1.2rem;
     line-height: 1.3rem;
@@ -73,45 +79,46 @@ i {
 }
 
 .nav-bar {
+    display: block;
     list-style: none;
     position: fixed;
     bottom: 0px;
-    left: -250px; /* Init off screen for animation */
+    left: -50%;
     transition: left 0.5s ease;
     height: 100%;
     background-color: var(--text-color);
     width: 50%;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
     z-index: 4;
 }
 
 .nav-bar.active {
     left: 0px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
 }
 
 #borgor {
     position: absolute;
-    bottom: 12px;
+    bottom: 10px;
     left: 20px;
 }
 
 /* Init X to be invisible */
 #close-menu {
     position: absolute;
-    bottom: 11px;
+    bottom: 9px;
     left: 20px;
     visibility: hidden;
     font-size: 25px;
     padding-left: 1px;
 }
 
-/* Bar for mobile nav */
+/* Bottom panel for mobile nav */
 #mobile-nav {
     position: fixed;
     bottom: 0px;
     left:0px;
     right:0px;
-    height: 8vh;
+    height: 70px;
     width: 100%;
     background-color: var(--text-color);
     z-index: 3;
@@ -120,7 +127,9 @@ i {
 .nav-item {
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    margin-left: 15%;
 }
 
 .nav-item .fa-solid, .nav-item span {
@@ -135,6 +144,10 @@ i {
     color: var(--bg-color);
 }
 
+.nav-item:first-child {
+    padding-top: 100%;
+}
+
 .nav-item:nth-child(4) {
     margin-bottom: 0; /* Remove bottom margin on the last item */
 }
@@ -144,7 +157,12 @@ i {
     display: none;
 }
 
-/* Styling for large viewports */
+/* Styling for ipad minis n up */
+@media (min-width: 768px) {
+
+}
+
+/* Styling for large viewports (ipad pro n up) */
 @media (min-width: 1024px) {
     /* Overlay to cover glow effect */
     /* Area outside of frame */
@@ -184,6 +202,10 @@ i {
 
     /* Normal nav bar */
     #borgor {
+        display: none;
+    }
+
+    #mobile-nav {
         display: none;
     }
 
