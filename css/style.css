@@ -225,7 +225,7 @@ main p {
 
 /* Add padding at the bottom so content goes above nav */
 #mobile-padding {
-    height: 180px;
+    padding-bottom: 100px;
 }
 
 /* Styling for ipad minis n up */
