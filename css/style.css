@@ -128,7 +128,7 @@ i {
     left:0px;
     right:0px;
     height: 70px;
-    width: 100%;
+    width: 100vw;
     background-color: var(--nav-color);
     z-index: 3;
 }
