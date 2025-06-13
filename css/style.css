@@ -5,6 +5,7 @@
     --text-color: rgb(185, 185, 204);
     --frame-color: rgb(127, 121, 128);
     --nav-color: #D7BA89;
+    --nav-highlight-color: #e2c89a;
     --accent-color: #B47EB3;
 }
 
@@ -104,9 +105,9 @@ i {
     position: fixed;
     top: 0px;
     bottom: 0px;
-    left: -50%;
+    left: -60%;
     transition: left 0.5s ease;
-    width: 50%;
+    width: 60%;
     height: 100%;
     background-color: var(--nav-color);
     z-index: 4;
@@ -130,7 +131,7 @@ i {
 
 #borgor {
     position: fixed;
-    bottom: 25px;
+    bottom: 20px;
     left: 30px;
     z-index: 101;
 }
@@ -138,7 +139,7 @@ i {
 /* Init X to be invisible */
 #close-menu {
     position: fixed;
-    bottom: 23px;
+    bottom: 18px;
     left: 30px;
     visibility: hidden;
     font-size: 25px;
@@ -152,29 +153,35 @@ i {
     bottom: 0;
     left:0;
     right:0;
-    height: 70px;
+    height: 60px;
     width: 100vw;
     background-color: var(--nav-color);
     z-index: 100;
 }
 
 .nav-item {
-    flex: 1;
     display: flex;
     align-items: center;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 12%;
+    padding-left: 30px;
     color: var(--bg-color);
     font-weight: 500;
+    box-sizing: border-box;
+    height: 100%;
 }
 
-.nav-item .fa-solid, .nav-item span {
-    margin-right: 10px;
+.nav-item.active {
+    background-color: var(--nav-highlight-color);
 }
+
+/* .nav-item .fa-solid, .nav-item span {
+    margin-right: 10px;
+} */
 
 .nav-item i {
-    width: 30px;
+    /* width: 30px; */
+    display: none;
 }
 
 .nav-item a {
