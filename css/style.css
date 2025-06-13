@@ -73,7 +73,7 @@ h3 {
 
 #description {
     margin-top: 1.2rem;
-    line-height: 1.3rem;
+    line-height: 24px;
 }
 
 /* Borgor stack navbar for mobile view */
@@ -193,14 +193,16 @@ main {
 }
 
 main p {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    font-weight: 300;
+    line-height: 24px;
 }
 
 .file-links {
     text-decoration: none;
     color: var(--nav-color);
     display: inline-block;
-    padding-bottom: 15px;
+    padding-bottom: 18px;
 }
 
 .file-links i {
