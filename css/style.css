@@ -24,9 +24,9 @@ body {
 
 /* Frame and overlay */
 .frame {
-    left: 15px;
-    right: 15px;
-    top: 15px;
+    left: 10px;
+    right: 10px;
+    top: 10px;
     bottom: 0px;
     position: fixed;
     border: 1px solid var(--frame-color);
@@ -228,7 +228,7 @@ main p {
 
 /* Add padding at the bottom so content goes above nav */
 #mobile-padding {
-    height: 30vh;
+    padding-top: 30vh;
 }
 
 /* Styling for ipad minis n up */
@@ -241,7 +241,10 @@ main p {
     /* Make frame fixed */
     .frame {
         min-height: auto;
+        top: 15px;
         bottom: 15px;
+        left: 15px;
+        right: 15px;
         overflow: auto;
     }
     /* Overlay to cover glow effect */
