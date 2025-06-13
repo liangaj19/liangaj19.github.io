@@ -82,7 +82,9 @@ h3 {
 
 /* Borgor stack navbar for mobile view */
 .main-navigation {
-    color: var(--title-color)
+    color: var(--title-color);
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
 }
 
 i {
@@ -145,13 +147,13 @@ i {
     align-items: center;
     margin-top: 20%;
     margin-bottom: 20%;
-    margin-left: 15%;
+    margin-left: 12%;
     color: var(--bg-color);
     font-weight: 500;
 }
 
 .nav-item .fa-solid, .nav-item span {
-    margin-right: 15px;
+    margin-right: 10px;
 }
 
 .nav-item i {
@@ -159,6 +161,7 @@ i {
 }
 
 .nav-item a {
+    color: var(--bg-color);
     text-decoration: none;
 }
 
@@ -222,7 +225,7 @@ main p {
 
 /* Add padding at the bottom so content goes above nav */
 #mobile-padding {
-    height: 80px;
+    height: 180px;
 }
 
 /* Styling for ipad minis n up */
