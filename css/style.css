@@ -4,6 +4,8 @@
     --title-color: rgb(246, 240, 248);
     --text-color: rgb(185, 185, 204);
     --frame-color: rgb(127, 121, 128);
+    --nav-color: #D7BA89;
+    --accent-color: #B47EB3;
 }
 
 /* Default styling for mobile view */
@@ -16,6 +18,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     overflow: auto;
+    position: relative;
+    box-sizing: border-box;
 }
 
 /* Frame and overlay */
@@ -23,10 +27,13 @@ body {
     left: 15px;
     right: 15px;
     top: 15px;
-    bottom: 15px;
+    bottom: 0px;
     position: absolute;
     border: 1px solid var(--frame-color);
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: scroll;
 }
 
 /* Styling for content inside of frame */
@@ -35,13 +42,15 @@ body {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     display: block;
-    box-sizing: border-box;
+    height: 100%;
+    flex: 1;
 }
 
 h1 {
     font-weight: 800;
     font-size: 2rem;
     color: var(--title-color);
+    margin-bottom: 15px;
 }
 
 h2 {
@@ -59,7 +68,7 @@ h3 {
 }
 
 .info {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 #description {
@@ -86,7 +95,7 @@ i {
     left: -50%;
     transition: left 0.5s ease;
     height: 100%;
-    background-color: var(--text-color);
+    background-color: var(--nav-color);
     width: 50%;
     z-index: 4;
 }
@@ -97,16 +106,16 @@ i {
 }
 
 #borgor {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
+    position: fixed;
+    bottom: 25px;
+    left: 30px;
 }
 
 /* Init X to be invisible */
 #close-menu {
-    position: absolute;
-    bottom: 9px;
-    left: 20px;
+    position: fixed;
+    bottom: 23px;
+    left: 30px;
     visibility: hidden;
     font-size: 25px;
     padding-left: 1px;
@@ -120,7 +129,7 @@ i {
     right:0px;
     height: 70px;
     width: 100%;
-    background-color: var(--text-color);
+    background-color: var(--nav-color);
     z-index: 3;
 }
 
@@ -130,6 +139,8 @@ i {
     margin-top: 20%;
     margin-bottom: 20%;
     margin-left: 15%;
+    color: var(--bg-color);
+    font-weight: 500;
 }
 
 .nav-item .fa-solid, .nav-item span {
@@ -140,21 +151,66 @@ i {
     width: 30px;
 }
 
-.nav-item span {
-    color: var(--bg-color);
+.nav-item a {
+    text-decoration: none;
 }
 
-.nav-item:first-child {
+.nav-item:nth-child(2) {
     padding-top: 100%;
 }
 
-.nav-item:nth-child(4) {
-    margin-bottom: 0; /* Remove bottom margin on the last item */
+/* Remove bottom margin on the last item */
+.nav-item:nth-child(5) {
+    margin-bottom: 0;
 }
 
 /* Hide resume and transcript download */
 .nav-button {
     display: none;
+}
+
+.msg {
+    text-align: center;
+    color: var(--bg-color);
+    font-weight: 500;
+    line-height: 25px;
+    margin-top: 10px;
+}
+
+/* Styling for main contents of website */
+main {
+    overflow: auto;
+}
+
+.subheading {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    position: sticky;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;
+}
+
+main p {
+    margin-bottom: 15px;
+}
+
+.file-links {
+    text-decoration: none;
+    color: var(--nav-color);
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.file-links i {
+    color: var(--nav-color);
+    margin-left: 4px;
+}
+
+/* Add padding at the bottom so content goes above nav */
+#mobile-padding {
+    height: 80px;
 }
 
 /* Styling for ipad minis n up */
@@ -164,6 +220,13 @@ i {
 
 /* Styling for large viewports (ipad pro n up) */
 @media (min-width: 1024px) {
+    /* Make frame fixed */
+    .frame {
+        position: fixed;
+        min-height: auto;
+        bottom: 15px;
+        overflow: auto;
+    }
     /* Overlay to cover glow effect */
     /* Area outside of frame */
     .overlay {
@@ -200,12 +263,16 @@ i {
         height: 100%;
     }
 
-    /* Normal nav bar */
+    /* Hide all mobile class */
     #borgor {
         display: none;
     }
 
     #mobile-nav {
+        display: none;
+    }
+
+    #mobile-padding {
         display: none;
     }
 
