@@ -36,6 +36,10 @@ body {
     overflow: scroll;
 }
 
+.overlay {
+    display: none;
+}
+
 /* Styling for content inside of frame */
 .content-wrapper {
     margin: 2rem 1.2rem;
