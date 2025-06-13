@@ -28,7 +28,7 @@ body {
     right: 15px;
     top: 15px;
     bottom: 0px;
-    position: absolute;
+    position: fixed;
     border: 1px solid var(--frame-color);
     display: flex;
     flex-direction: column;
@@ -179,14 +179,17 @@ i {
 
 /* Styling for main contents of website */
 main {
-    overflow: auto;
+    position: relative;
 }
 
 .subheading {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--bg-color);
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-size: 1.1rem;
-    position: sticky;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 40px;
@@ -224,7 +227,6 @@ main p {
 @media (min-width: 1024px) {
     /* Make frame fixed */
     .frame {
-        position: fixed;
         min-height: auto;
         bottom: 15px;
         overflow: auto;
@@ -280,6 +282,10 @@ main p {
 
     .nav-bar {
         display: block;
+    }
+
+    main p {
+        font-weight: 400;
     }
 
     /* Cursor glow effect */

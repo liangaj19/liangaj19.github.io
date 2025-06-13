@@ -1,4 +1,4 @@
-/* Cursor glow effect */
+// Cursor glow effect
 window.onload = function () {
     const glow = document.querySelector(".cursor-glow");
 
@@ -23,7 +23,7 @@ window.onload = function () {
     followCursor();
 };
 
-/* Mobile borgor stack */
+// Mobile borgor stack
 document.addEventListener('DOMContentLoaded', function() {
     const borgor = document.getElementById('borgor');
     const navBar = document.querySelector('.nav-bar');
