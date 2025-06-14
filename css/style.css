@@ -331,10 +331,10 @@ main p {
         display: flex;
         flex-direction: row;
         gap: 80px;
-        width: 80%;
+        width: 85%;
         align-self: center;
         align-items: flex-start;
-        margin-top: 20px;
+        margin-top: 40px;
         margin-bottom: 20px;
         overflow: hidden;
         scrollbar-width: none;
@@ -354,6 +354,8 @@ main p {
     .right-panel {
         flex: 0 0 60%;
         height: 100vh;
+        width: 90%;
+        align-self: center;
         display: block;
         overflow-y: auto;
         scrollbar-width: none;
@@ -367,6 +369,29 @@ main p {
     .main-navigation {
         display: flex;
         flex-direction: column;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-top: 0;
+        padding-top: 20px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    /* Main styling */
+    .subheading {
+        font-size: 1.3rem;
+    }
+
+    .subheading:first-child {
+        margin-top: 0;
     }
 
     /* Cursor glow effect */
