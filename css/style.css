@@ -85,10 +85,15 @@ h3 {
 }
 
 /* Borgor stack navbar for mobile view */
-.main-navigation {
+.mobile-navigation {
     color: var(--title-color);
     font-family: "Lato", sans-serif;
     font-weight: 400;
+}
+
+/* Hide pc version of nav */
+.main-navigation {
+    display: none;
 }
 
 i {
@@ -257,11 +262,12 @@ main p {
         bottom: 15px;
         left: 15px;
         right: 15px;
-        overflow: auto;
+        overflow: hidden;
     }
     /* Overlay to cover glow effect */
     /* Area outside of frame */
     .overlay {
+        display: block;
         position: fixed;
         background-color: var(--bg-color);
         z-index: 3; /* Higher than the cursor glow to cover it */
@@ -296,6 +302,10 @@ main p {
     }
 
     /* Hide all mobile class */
+    .mobile-navigation {
+        display: none;
+    }
+
     #borgor {
         display: none;
     }
@@ -314,6 +324,49 @@ main p {
 
     main p {
         font-weight: 400;
+    }
+
+    /* Split left and right panel using flexbox */
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 80px;
+        width: 80%;
+        align-self: center;
+        align-items: flex-start;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        scrollbar-width: none;
+    }
+
+    .content-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .left-panel {
+        flex: 0 0 40%;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+    }
+
+    .right-panel {
+        flex: 0 0 60%;
+        height: 100vh;
+        display: block;
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+
+    .right-panel::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Nav bar styling */
+    .main-navigation {
+        display: flex;
+        flex-direction: column;
     }
 
     /* Cursor glow effect */
