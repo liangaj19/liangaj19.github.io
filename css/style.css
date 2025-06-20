@@ -61,6 +61,11 @@ h1 {
     margin-bottom: 15px;
 }
 
+h1 a {
+    text-decoration: none;
+    color: var(--title-color);
+}
+
 h2 {
     font-weight: 500;
     font-size: 1.2rem;
@@ -180,23 +185,13 @@ i {
     background-color: var(--nav-highlight-color);
 }
 
-/* .nav-item .fa-solid, .nav-item span {
-    margin-right: 10px;
-} */
-
 .nav-item i {
-    /* width: 30px; */
     display: none;
 }
 
 .nav-item a {
     color: var(--bg-color);
     text-decoration: none;
-}
-
-/* Hide resume and transcript download */
-.nav-button {
-    display: none;
 }
 
 .msg {
@@ -315,7 +310,7 @@ main p {
     }
 
     #mobile-padding {
-        display: none;
+        padding-top: 10vh;
     }
 
     .nav-bar {
@@ -332,12 +327,14 @@ main p {
         flex-direction: row;
         gap: 80px;
         width: 85%;
+        height: calc(100vh - 90px);
         align-self: center;
         align-items: flex-start;
-        margin-top: 40px;
+        margin-top: 70px;
         margin-bottom: 20px;
         overflow: hidden;
         scrollbar-width: none;
+        box-sizing: content-box;
     }
 
     .content-wrapper::-webkit-scrollbar {
@@ -345,14 +342,19 @@ main p {
     }
 
     .left-panel {
-        flex: 0 0 40%;
         position: sticky;
         top: 0;
-        height: 100vh;
+        flex: 0 0 40%;
+        height: calc(100vh - 200px);
+        margin-right: 50px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        overflow: hidden;
     }
 
     .right-panel {
-        flex: 0 0 60%;
+        flex: 1;
         height: 100vh;
         width: 90%;
         align-self: center;
@@ -369,29 +371,76 @@ main p {
     .main-navigation {
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
     }
 
     h1 {
         font-size: 3rem;
         margin-top: 0;
+        margin-bottom: 20px;
         padding-top: 20px;
     }
 
     h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+        font-weight: 400;
     }
 
     h3 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+
+    p {
+        font-size: 1.05rem;
+    }
+
+    header {
+        margin-bottom: 13%;
+    }
+
+    .main-navigation li {
+        margin-bottom: 50px;
+        list-style: none;
+    }
+
+    .main-navigation a {
+        text-decoration: none;
+        color: var(--title-color);
+    }
+
+    .main-navigation span {
+        text-transform: uppercase;
+        font-family: "Lato", sans-serif;
+        font-weight: 700;
+    }
+    
+    .item {
+        position: relative;
+    }
+
+    
+
+    .msg {
+        color: var(--text-color);
+        font-weight: 300;
+        /* padding-bottom: 20vh; */
+        text-align: left;
     }
 
     /* Main styling */
     .subheading {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
     }
 
     .subheading:first-child {
         margin-top: 0;
+    }
+
+    .section {
+        margin-bottom: 70px;
     }
 
     /* Cursor glow effect */
