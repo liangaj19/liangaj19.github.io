@@ -345,7 +345,7 @@ main p {
         position: sticky;
         top: 0;
         flex: 0 0 40%;
-        height: calc(100vh - 200px);
+        height: calc(100vh - 20vh);
         margin-left: 50px;
         display: flex;
         flex-direction: column;
@@ -375,7 +375,7 @@ main p {
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
         margin-top: 0;
         margin-bottom: 20px;
         padding-top: 20px;
@@ -420,12 +420,9 @@ main p {
         position: relative;
     }
 
-    
-
     .msg {
         color: var(--text-color);
         font-weight: 300;
-        /* padding-bottom: 20vh; */
         text-align: left;
     }
 
@@ -442,6 +439,46 @@ main p {
     .section {
         margin-bottom: 70px;
     }
+
+    /* Project and experience cards */
+    .ol-list {
+        display: grid;
+        list-style: none;
+    }
+
+    .list-item {
+        margin-bottom: 20px;
+    }
+
+    .list-card {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+
+    /* Either an image or a date */
+    .project-img {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .card-date {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .card-info {
+        display: grid;
+        grid-column-start: 4;
+        grid-column-end: 9;
+    }
+
+    .card-pills {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
 
     /* Cursor glow effect */
     .cursor-glow {
