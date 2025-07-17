@@ -56,7 +56,7 @@ body {
 
 h1 {
     font-weight: 800;
-    font-size: 1.9rem;
+    font-size: clamp(2rem, 3vw, 2.8rem);
     color: var(--title-color);
     margin-top: 2rem;
     margin-bottom: 15px;
@@ -69,14 +69,14 @@ h1 a {
 
 h2 {
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
     margin-top: .7rem;
     color: var(--title-color);
 }
 
 h3 {
     font-weight: 500;
-    font-size: 1.15rem;
+    font-size: clamp(1.1rem, 1vw, 1.4rem);
     margin-top: .7rem;
     font-style: italic;
 }
@@ -103,7 +103,7 @@ h3 {
 }
 
 i {
-    font-size: 20px; /* Make icons slightly larger */
+    font-size: 1rem;
     z-index: 6;
     color: var(--bg-color);
 }
@@ -196,6 +196,7 @@ i {
 }
 
 .msg {
+    position: relative;
     text-align: center;
     color: var(--bg-color);
     font-weight: 500;
@@ -242,6 +243,81 @@ main p {
 /* Add padding at the bottom so content goes above nav */
 #mobile-padding {
     padding-top: 10vh;
+}
+
+/* Project and experience cards */
+.ol-list {
+    display: grid;
+    list-style: none;
+}
+
+.list-item {
+    margin-bottom: 50px;
+}
+
+.list-card {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+/* Either an image or a date */
+.project-img {
+    display: none;
+}
+
+.card-date {
+    grid-column-start: 1;
+    grid-column-end: 9;
+}
+
+.card-info {
+    display: block;
+    grid-column-start: 1;
+    grid-column-end: 9;
+}
+
+.card-name {
+    margin-bottom: 10px;
+}
+
+.card-name a {
+    text-decoration: none;
+    font-style: normal;
+    color: var(--title-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+.card-name a i {
+    color: var(--title-color);
+    margin-left: 5px;
+    font-size: 1rem;
+}
+
+.card-description {
+    font-size: 0.97rem;
+    line-height: 25px;
+    margin: 0 0 15px 0;
+}
+
+.card-pills {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pill {
+    color: var(--accent-color-two);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 5px 15px;
+    margin-right: 8px;
+    margin-bottom: 6px;
+    /* border: 1px solid var(--nav-color); */
+    background-color: rgba(226, 200, 154, 0.2);
+    border-radius: 15px;
 }
 
 /* Styling for ipad minis n up */
@@ -346,7 +422,8 @@ main p {
         position: sticky;
         top: 0;
         flex: 0 0 40%;
-        height: calc(100vh - 20vh);
+        max-height: 100vh;
+        /* height: calc(100vh - 20vh); */
         margin-left: 50px;
         display: flex;
         flex-direction: column;
@@ -379,19 +456,16 @@ main p {
     }
 
     h1 {
-        font-size: 2.8rem;
         margin-top: 0;
         margin-bottom: 20px;
         padding-top: 20px;
     }
 
     h2 {
-        font-size: 1.4rem;
         font-weight: 400;
     }
 
     h3 {
-        font-size: 1.4rem;
         font-weight: 400;
         margin-bottom: 40px;
     }
@@ -461,13 +535,13 @@ main p {
 
     /* Either an image or a date */
     .project-img {
+        display: block;
         grid-column-start: 1;
         grid-column-end: 4;
         width: 90%;
         height: 55%;
         object-fit: cover;
         object-position: top;
-        display: block;
         border: 2px solid var(--nav-color);
         border-radius: 10px;
     }
@@ -484,7 +558,6 @@ main p {
     }
 
     .card-name {
-        font-style: normal;
         margin-bottom: 20px;
         color: var(--title-color);
         font-size: 1.15rem;
