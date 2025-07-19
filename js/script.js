@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Highlight the current section the user is in in the nav
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('.section');
-    const navItems = document.querySelectorAll('.nav-item');
+    const navItems = document.querySelectorAll('.nav-item, .item');
 
     const observerOptions = {
         root: null,
@@ -69,9 +69,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Remove active class from all nav items
                 navItems.forEach(item => item.classList.remove('active'));
                 
-                // Add active class to the current section's nav item
-                const activeNavItem = document.querySelector(`.nav-item a[href="#${entry.target.id}"]`).parentElement;
-                activeNavItem.classList.add('active');
+                // Mobile nav
+                const activeMobileNavItem = document.querySelector(`.nav-item a[href="#${entry.target.id}"]`);
+                if (activeMobileNavItem) {
+                    activeMobileNavItem.parentElement.classList.add('active');
+                }
+
+                // Main navigation (left panel)
+                const activeMainNavItem = document.querySelector(`.main-navigation .item a[href="#${entry.target.id}"]`);
+                if (activeMainNavItem) {
+                    activeMainNavItem.parentElement.classList.add('active');
+                }
             }
         });
     };
@@ -80,5 +88,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sections.forEach(section => {
         observer.observe(section);
+    });
+});
+
+// Also make the nav bar item active when the user clicks on a section bc the above observer is not the most accurate
+document.querySelectorAll('.nav-item, .main-navigation .item').forEach(item => {
+    item.addEventListener('click', function() {
+        document.querySelectorAll('.nav-item, .main-navigation .item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
     });
 });

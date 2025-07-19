@@ -467,6 +467,46 @@ main p {
         flex-grow: 1;
     }
 
+    .main-navigation .item a span {
+        display: inline-block;
+        transition: color 0.5s, padding-left 0.5s cubic-bezier(.77,0,.18,1);
+        padding-left: 0px;
+    }
+
+    .main-navigation .item.active a span {
+        color: var(--accent-color-two);
+        padding-left: 40px;
+    }
+
+    /* Apply same styling when hovering over the nav item */
+    .main-navigation .item:hover a span {
+        color: var(--accent-color-two);
+        padding-left: 40px;
+    }
+
+    .main-navigation .item a span::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%) scaleX(0);
+        transform-origin: left;
+        width: 30px;
+        height: 3px;
+        background: var(--accent-color-two);
+        transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+        opacity: 1;
+    }
+
+    .main-navigation .item.active a span::before {
+        transform: translateY(-50%) scaleX(1);
+    }
+
+    /* Apply same styling when hovering over the nav item */
+    .main-navigation .item:hover a span::before {
+        transform: translateY(-50%) scaleX(1);
+    }
+    
     h1 {
         margin-top: 0;
         margin-bottom: 20px;
