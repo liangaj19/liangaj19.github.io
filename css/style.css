@@ -585,7 +585,7 @@ main p {
         display: block;
         grid-column-start: 1;
         grid-column-end: 4;
-        width: 250px;
+        width: 90%;
         height: 160px;
         object-fit: cover;
         object-position: top;
