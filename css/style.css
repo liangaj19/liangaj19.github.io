@@ -249,15 +249,14 @@ main p {
 .ol-list {
     display: grid;
     list-style: none;
-}
-
-.list-item {
-    margin-bottom: 50px;
+    gap: 50px;
 }
 
 .list-card {
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
+    min-height: 290px;
+    align-items: start;
 }
 
 /* Either an image or a date */
@@ -274,10 +273,14 @@ main p {
     display: block;
     grid-column-start: 1;
     grid-column-end: 9;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
-.card-name {
-    margin-bottom: 10px;
+.card-name,
+.card-description {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .card-name a {
@@ -314,7 +317,7 @@ main p {
     font-size: 0.9rem;
     padding: 5px 15px;
     margin-right: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     /* border: 1px solid var(--nav-color); */
     background-color: rgba(226, 200, 154, 0.2);
     border-radius: 15px;
@@ -573,18 +576,8 @@ main p {
     }
 
     /* Project and experience cards */
-    .ol-list {
-        display: grid;
-        list-style: none;
-    }
-
     .list-item {
-        margin-bottom: 50px;
-    }
-
-    .list-card {
-        display: grid;
-        grid-template-columns: repeat(8, minmax(0, 1fr));
+        margin-bottom: 0;
     }
 
     /* Either an image or a date */
@@ -592,12 +585,13 @@ main p {
         display: block;
         grid-column-start: 1;
         grid-column-end: 4;
-        width: 90%;
-        height: 55%;
+        width: 250px;
+        height: 160px;
         object-fit: cover;
         object-position: top;
         border: 2px solid var(--nav-color);
         border-radius: 10px;
+        align-self: start;
     }
 
     .card-date {
@@ -607,8 +601,8 @@ main p {
 
     .card-info {
         display: block;
-        grid-column-start: 4;
-        grid-column-end: 9;
+        grid-column: 4 / 9;
+        align-self: start;
     }
 
     .card-name {
@@ -617,31 +611,6 @@ main p {
         font-size: 1.15rem;
         font-weight: 600;
         margin: 0 0 10px 0;
-    }
-
-    .card-description {
-        font-size: 0.97rem;
-        line-height: 25px;
-        margin: 0 0 15px 0;
-    }
-
-    .card-pills {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .pill {
-        color: var(--accent-color-two);
-        font-weight: 500;
-        font-size: 0.9rem;
-        padding: 5px 15px;
-        margin-right: 8px;
-        margin-bottom: 6px;
-        /* border: 1px solid var(--nav-color); */
-        background-color: rgba(226, 200, 154, 0.2);
-        border-radius: 15px;
     }
 
     /* Cursor glow effect */
