@@ -267,6 +267,10 @@ main p {
 .card-date {
     grid-column-start: 1;
     grid-column-end: 9;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 0.98rem;
 }
 
 .card-info {
@@ -275,6 +279,7 @@ main p {
     grid-column-end: 9;
     margin-bottom: 0;
     padding-bottom: 0;
+    align-self: start;
 }
 
 .card-name,
