@@ -387,7 +387,7 @@ main p {
     }
 
     #mobile-padding {
-        padding-top: 0vh;
+        display: none;
     }
 
     .nav-bar {

@@ -98,3 +98,22 @@ document.querySelectorAll('.nav-item, .main-navigation .item').forEach(item => {
         item.classList.add('active');
     });
 });
+
+// Handle nav-bar clicks to contact section
+document.querySelectorAll('.main-navigation .item a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').replace('#', '');
+        const section = document.getElementById(targetId);
+        const rightPanel = document.getElementById('right-panel');
+        if (section && rightPanel) {
+            e.preventDefault(); // Prevent default anchor jump
+            // Calculate offset for sticky header
+            const stickyOffset = 80; // Adjust to your sticky header height
+            const sectionTop = section.offsetTop - stickyOffset;
+            rightPanel.scrollTo({
+                top: sectionTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
