@@ -721,18 +721,18 @@ main p {
         display: block;
         grid-column-start: 1;
         grid-column-end: 4;
+        aspect-ratio: 16 / 10;
         width: 90%;
-        height: 160px;
+        height: auto;
         object-fit: cover;
-        object-position: top;
+        object-position: top center;
         border: 2px solid var(--nav-color);
         border-radius: 10px;
         align-self: start;
     }
 
     .card-date {
-        grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column: 1 / 3;
     }
 
     .card-info {
