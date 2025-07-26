@@ -144,3 +144,19 @@ document.querySelectorAll('a[href="#app-accelerator"]').forEach(link => {
         }
     });
 });
+
+// Toggle cursor glow effect
+document.querySelector('.cursor-glow-toggle').addEventListener('click', function() {
+    const cursorGlow = document.querySelector('.cursor-glow');
+    const cursorGlowImg = document.querySelectorAll('.cursor-glow-img');
+
+    if (cursorGlow.style.display === 'none' || cursorGlow.style.display === '') {
+        cursorGlow.style.display = 'block';
+        cursorGlowImg[0].style.display = 'block'; // Lamp on
+        cursorGlowImg[1].style.display = 'none'; // Lamp off
+    } else {
+        cursorGlow.style.display = 'none';
+        cursorGlowImg[0].style.display = 'none'; // Lamp on
+        cursorGlowImg[1].style.display = 'block'; // Lamp off
+    }
+});
