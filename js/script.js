@@ -117,3 +117,30 @@ document.querySelectorAll('.main-navigation .item a').forEach(link => {
         }
     });
 });
+
+// When hovering over a list card, make the cursor glow less visible
+document.querySelectorAll('.list-card, .contact-input').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        document.querySelector('.cursor-glow').style.filter = 'blur(280px)';
+    });
+    card.addEventListener('mouseleave', () => {
+        document.querySelector('.cursor-glow').style.filter = 'blur(200px)'; // default value
+    });
+});
+
+// Enable smooth scrolling for app accelerator section
+document.querySelectorAll('a[href="#app-accelerator"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const target = document.getElementById('app-accelerator');
+        const rightPanel = document.getElementById('right-panel');
+        if (target && rightPanel) {
+            e.preventDefault();
+            const stickyOffset = 80; // Adjust to your sticky header height
+            const sectionTop = target.offsetTop - stickyOffset;
+            rightPanel.scrollTo({
+                top: sectionTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
