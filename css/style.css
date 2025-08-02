@@ -308,7 +308,7 @@ main p {
     text-transform: uppercase;
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 0.98rem;
+    font-size: clamp(0.7rem, 1vw, 1rem);
     margin-bottom: 5px;
 }
 
@@ -704,6 +704,7 @@ main p {
         margin-top: auto;
         color: var(--text-color);
         font-weight: 300;
+        font-size: 0.91rem;
         text-align: left;
         top: auto;
         left: auto;
@@ -715,6 +716,13 @@ main p {
     .subheading {
         font-size: 1.2rem;
         margin-bottom: 10px;
+        z-index: 200;
+        background-color: var(--bg-color);
+        /* to prevent list-card hover bleedthrough */
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: -10px;
+        margin-right: -10px;
     }
 
     .subheading:first-of-type {
