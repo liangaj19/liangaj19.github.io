@@ -841,6 +841,7 @@ main p {
 
     #cursor-glow-on {
         opacity: 0.8;
+        display: block;
     }
 
     #cursor-glow-off {

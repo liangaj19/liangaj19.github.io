@@ -148,15 +148,18 @@ document.querySelectorAll('a[href="#app-accelerator"]').forEach(link => {
 // Toggle cursor glow effect
 document.querySelector('.cursor-glow-toggle').addEventListener('click', function() {
     const cursorGlow = document.querySelector('.cursor-glow');
-    const cursorGlowImg = document.querySelectorAll('.cursor-glow-img');
+    const glowOn = document.getElementById('cursor-glow-on');
+    const glowOff = document.getElementById('cursor-glow-off');
 
-    if (cursorGlow.style.display === 'none' || cursorGlow.style.display === '') {
-        cursorGlow.style.display = 'block';
-        cursorGlowImg[0].style.display = 'block'; // Lamp on
-        cursorGlowImg[1].style.display = 'none'; // Lamp off
-    } else {
+    if (window.getComputedStyle(glowOn).display === 'block') {
+        glowOn.style.display = 'none';
+        glowOff.style.display = 'block';
         cursorGlow.style.display = 'none';
-        cursorGlowImg[0].style.display = 'none'; // Lamp on
-        cursorGlowImg[1].style.display = 'block'; // Lamp off
+        console.log('Cursor glow effect disabled');
+    } else {
+        glowOn.style.display = 'block';
+        glowOff.style.display = 'none';
+        cursorGlow.style.display = 'block';
+        console.log('Cursor glow effect enabled');
     }
 });
